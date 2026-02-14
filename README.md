@@ -30,10 +30,6 @@ A static website for Medical Students for Choice, featuring board member informa
    - Click **Save**
    - Your site will be live at: `https://your-username.github.io/repository-name`
 
-## Admin Access
-
-- Admin password: `msfc2024`
-- Login from any page to access admin features
 
 ## Security Note
 
