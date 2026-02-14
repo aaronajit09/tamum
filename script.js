@@ -73,6 +73,10 @@ const ADMIN_PASSWORD = 'ADMIN_PASSWORD_PLACEHOLDER';
 const supabaseUrl = 'SUPABASE_URL_PLACEHOLDER';
 const supabaseKey = 'SUPABASE_KEY_PLACEHOLDER';
 
+// Storage bucket names
+const NEWSLETTERS_BUCKET = 'NEWSLETTERS_BUCKET_PLACEHOLDER';
+const NEWSLETTER_COVERS_BUCKET = 'NEWSLETTER_COVERS_BUCKET_PLACEHOLDER';
+
 let supabase = null;
 if (window.supabase) {
     // Keys are now defined above
@@ -296,14 +300,14 @@ if (newsletterForm) {
             // Upload PDF to Supabase Storage
             const fileName = `${Date.now()}-${pdfFile.name}`;
             const { error: uploadError } = await supabase.storage
-                .from('newsletters')
+                .from(NEWSLETTERS_BUCKET)
                 .upload(fileName, pdfFile);
 
             if (uploadError) throw uploadError;
 
             // Get the public URL for the uploaded file
             const { data: { publicUrl } } = supabase.storage
-                .from('newsletters')
+                .from(NEWSLETTERS_BUCKET)
                 .getPublicUrl(fileName);
 
             // Upload cover image if provided
@@ -311,11 +315,11 @@ if (newsletterForm) {
             if (coverFile) {
                 const coverFileName = `${Date.now()}-${coverFile.name}`;
                 const { error: coverError } = await supabase.storage
-                    .from('newsletter-covers')
+                    .from(NEWSLETTER_COVERS_BUCKET)
                     .upload(coverFileName, coverFile, { upsert: false });
                 if (coverError) throw coverError;
                 const { data: { publicUrl: coverPublicUrl } } = supabase.storage
-                    .from('newsletter-covers')
+                    .from(NEWSLETTER_COVERS_BUCKET)
                     .getPublicUrl(coverFileName);
                 coverUrl = coverPublicUrl;
             }

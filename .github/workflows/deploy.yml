@@ -29,6 +29,8 @@ jobs:
           sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" script.js
           sed -i "s|SUPABASE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_ANON_KEY }}|g" script.js
           sed -i "s|ADMIN_PASSWORD_PLACEHOLDER|${{ secrets.ADMIN_PASSWORD }}|g" script.js
+          sed -i "s|NEWSLETTERS_BUCKET_PLACEHOLDER|${{ secrets.NEWSLETTERS_BUCKET }}|g" script.js
+          sed -i "s|NEWSLETTER_COVERS_BUCKET_PLACEHOLDER|${{ secrets.NEWSLETTER_COVERS_BUCKET }}|g" script.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
