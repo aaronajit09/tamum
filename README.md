@@ -11,61 +11,33 @@ A static website for Medical Students for Choice, featuring board member informa
 - Event management
 - Email subscription system
 - Admin authentication
-- GitHub Pages deployment with secrets
 
-## Local Development Setup
+## Setup
 
-1. **Install Node.js** (if not already installed)
+1. **Supabase Setup:**
+   - Follow `SUPABASE_SETUP.md` to create your database and storage buckets
+   - The website is already configured with your Supabase credentials
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Build for local development:**
-   ```bash
-   npm run dev
-   ```
-   This injects your `.env` values into `script.js` for local testing.
-
-4. **Open the site:**
+2. **Local Development:**
    - Open `index.html` in your browser
-   - The site will work with your local Supabase data
+   - Everything should work locally
 
-## Supabase Setup
-
-Follow the instructions in `SUPABASE_SETUP.md` to:
-- Create a Supabase project
-- Set up database tables (subscribers, newsletters, events)
-- Create storage buckets
-- Configure policies
-
-## GitHub Pages Deployment
-
-1. **Set up GitHub Secrets:**
-   - Go to your repo → Settings → Secrets and variables → Actions
-   - Add these secrets:
-     - `SUPABASE_URL`: Your Supabase project URL
-     - `SUPABASE_ANON_KEY`: Your Supabase anon key
-     - `ADMIN_PASSWORD`: Your admin password
-
-2. **Enable GitHub Pages:**
-   - Go to Settings → Pages
-   - Set source to "GitHub Actions"
-   - The workflow will automatically deploy on pushes to `main`
-
-3. **Your site will be live** at: `https://your-username.github.io/repo-name`
+3. **GitHub Pages Deployment:**
+   - Push this code to GitHub
+   - Go to **Settings** → **Pages**
+   - Set **Source** to **"Deploy from a branch"**
+   - Select **"main"** branch and **"/ (root)"** folder
+   - Click **Save**
+   - Your site will be live at: `https://your-username.github.io/repository-name`
 
 ## Admin Access
 
-- Admin password is stored in GitHub secrets (not visible in code)
-- Log in from any page to access admin features
+- Admin password: `msfc2024`
+- Login from any page to access admin features
 
-## Security
+## Security Note
 
-- Supabase keys are hidden in GitHub secrets for production
-- Local development uses `.env` file (not committed to git)
-- Admin password is client-side only (not truly secret, but hidden from casual inspection)
+The Supabase anon key is public (as intended) and the admin password is client-side only. For production use, consider implementing proper authentication if needed.
 
 ## File Structure
 
