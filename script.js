@@ -66,14 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Admin password (in a real app, this would be handled server-side)
-const ADMIN_PASSWORD = 'msfc2024';
+// Admin password (loaded from environment variable)
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 // Supabase configuration - Replace with your new project URL and anon key (see SUPABASE_SETUP.md)
 let supabase = null;
 if (window.supabase) {
-    const supabaseUrl = 'https://txkkrcpcwgwgehogwisx.supabase.co';
-    const supabaseKey = 'sb_publishable_CfWcrYO5PbZ15FdyLOItww_hOY6HpIA';
+    // Keys are in .env file
     if (supabaseUrl && supabaseKey) {
         supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
     }
