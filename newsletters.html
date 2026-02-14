@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletters - Texas A&M Medical Students for Choice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="https://www.instagram.com/tamu.msfc/" class="nav-brand-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <div class="nav-center">
+            <a href="index.html">HOME</a>
+            <a href="board.html">BOARD</a>
+            <a href="medical-info.html">RESOURCES</a>
+            <a href="newsletters.html" class="active">NEWSLETTERS</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="adminNavBtn" class="btn-support">ADMIN</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Newsletters</h1>
+            <p>Stay updated with our quarterly newsletters featuring reproductive health legislation, educational content, and opportunities for student engagement.</p>
+        </section>
+
+        <section class="subscription-form" style="display: none;">
+            <!-- This form is now in the footer of all pages, hiding original -->
+        </section>
+
+        <div id="adminControls" style="display: none;" class="admin-controls">
+            <a href="admin.html" class="btn">Upload New Newsletter</a>
+        </div>
+
+        <section id="newslettersList" class="newsletters">
+            <!-- Newsletters will be dynamically added here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Texas A&M Medical Students for Choice</h2>
+            <p>Faculty Advisor: Dr. Rajesh Miranda</p>
+            <p>For inquiries, email <a href="mailto:tamu.msfc@gmail.com">tamu.msfc@gmail.com</a></p>
+            <p>Subscribe to our email list to follow what future doctors are doing to protect and expand abortion access at the Texas A&M College of Medicine!</p>
+            
+            <form id="subscriptionForm" class="subscription-form">
+                <input type="email" id="subscriberEmail" placeholder="Email Address" required>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+            <p id="subscriptionMessage" class="subscription-message"></p>
+
+            <div class="footer-links">
+                <a href="mailto:tamu.msfc@gmail.com">contact us</a>
+                <a href="index.html">home</a>
+                <a href="https://msfc.org/" target="_blank">national msfc</a>
+                <a href="https://www.instagram.com/tamu.msfc/" target="_blank">instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <style>
+    footer {
+        margin-top: 40px;
+    }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

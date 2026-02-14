@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas A&M Medical Students for Choice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="https://www.instagram.com/tamu.msfc/" class="nav-brand-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <div class="nav-center">
+            <a href="index.html" class="active">HOME</a>
+            <a href="board.html">BOARD</a>
+            <a href="medical-info.html">RESOURCES</a>
+            <a href="newsletters.html">NEWSLETTERS</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="adminNavBtn" class="btn-support">ADMIN</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <p>reproductive justice / advocacy</p>
+            <h1>Texas A&M Medical Students for Choice</h1>
+        </div>
+        <a href="#update" class="scroll-down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
+    </header>
+
+    <section id="update" class="huge-update">
+        <h2>OUR MISSION</h2>
+        <p>Our mission is to support future abortion care providers and advocate for reproductive justice globally. We believe that all people should have access to health services that allow them to lead safe, healthy lives including all aspects of sexual and reproductive health consistent with their own personal and cultural values.</p>
+    </section>
+
+    <section id="journal" class="latest-volume">
+        <div class="volume-text">
+            <h2 class="freight-big-pro-italic">
+                Our Latest<br>Newsletter:
+            </h2>
+        </div>
+        <div class="volume-image">
+            <a href="#" id="latestVolumeLink" target="_blank">
+                <img id="latestVolumeImg" src="download (20).jpg" alt="Medical Students for Choice Activities">
+            </a>
+        </div>
+    </section>
+
+    <section class="tagline">
+        <p>WE ARE COMMITTED TO ADVANCING REPRODUCTIVE JUSTICE THROUGH EDUCATION, ADVOCACY, AND CLINICAL EXPOSURE.</p>
+    </section>
+    
+    <section id="about" class="our-mission">
+        <h2>UPCOMING EVENTS</h2>
+
+        <div id="eventsAdminWrap" class="events-admin-wrap" style="display: none;">
+            <button type="button" id="toggleAddEventBtn" class="btn">Add Event</button>
+            <form id="eventForm" class="event-form" style="display: none;">
+                <div class="form-group">
+                    <label for="eventTitle">Title</label>
+                    <input type="text" id="eventTitle" required placeholder="Event title">
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date / Time</label>
+                    <input type="text" id="eventDate" required placeholder="e.g. January 13 @ 6pm">
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" rows="4" required placeholder="Event description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventLink">RSVP / Link URL (optional)</label>
+                    <input type="url" id="eventLink" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label for="eventImageUrl">Image URL (optional)</label>
+                    <input type="url" id="eventImageUrl" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn">Create Event</button>
+                <button type="button" id="cancelEventFormBtn" class="btn btn-secondary">Cancel</button>
+            </form>
+        </div>
+
+        <div id="eventsList" class="events-list">
+            <!-- Events loaded from Supabase -->
+        </div>
+    </section>
+
+    <section id="features" class="catch-up">
+        <h2>COMMITTEES</h2>
+        <div class="catch-up-grid">
+            <div class="catch-up-item">
+                <h3>ADVOCACY COMMITTEE</h3>
+                <p>Responsible for fostering relationships with the local community and organizing SOM-wide volunteering events for the student body. Creates recruiting materials and organizes volunteer sign-ups and logistics. Works with campus representatives for any campus-specific initiatives.</p>
+                <img src="pic1.png" alt="Advocacy Committee">
+            </div>
+            <div class="catch-up-item">
+                <img src="img_2208.jpg" alt="Newsletter Committee">
+                <h3>NEWSLETTER COMMITTEE</h3>
+                <p>Produces a quarterly newsletter to update the student body on relevant reproductive health-related legislation, educate the student body about family planning-related data, and feature events and opportunities for student engagement at the chapter, local, state, and national level.</p>
+            </div>
+            <div class="catch-up-item">
+                <h3>CURRICULUM REFORM COMMITTEE</h3>
+                <p>Works alongside faculty members to update and expand family planning content in SOM medical curriculum, including the Family Planning and Reproductive Health selective.</p>
+                <img src="reform.png" alt="Curriculum Reform Committee">
+            </div>
+        </div>
+    </section>
+    
+    <section class="quote">
+        <p>"REPRODUCTIVE JUSTICE IS THE COMPLETE PHYSICAL, MENTAL, SPIRITUAL, POLITICAL, SOCIAL, AND ECONOMIC WELL-BEING OF WOMEN AND GIRLS."</p>
+        <p>–SisterSong Women of Color Reproductive Justice Collective</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Texas A&M Medical Students for Choice</h2>
+            <p>Faculty Advisor: Dr. Rajesh Miranda</p>
+            <p>For inquiries, email <a href="mailto:tamu.msfc@gmail.com">tamu.msfc@gmail.com</a></p>
+            <p>Subscribe to our email list to follow what future doctors are doing to protect and expand abortion access at the Texas A&M College of Medicine!</p>
+            
+            <form id="subscriptionForm" class="subscription-form">
+                <input type="email" id="subscriberEmail" placeholder="Email Address" required>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+            <p id="subscriptionMessage" class="subscription-message"></p>
+
+            <div class="footer-links">
+                <a href="mailto:tamu.msfc@gmail.com">contact us</a>
+                <a href="index.html">home</a>
+                <a href="https://msfc.org/" target="_blank">national msfc</a>
+                <a href="https://www.instagram.com/tamu.msfc/" target="_blank">instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Texas A&M Medical Students for Choice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="https://www.instagram.com/tamu.msfc/" class="nav-brand-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        <div class="nav-center">
+            <a href="index.html">HOME</a>
+            <a href="board.html">BOARD</a>
+            <a href="medical-info.html">RESOURCES</a>
+            <a href="newsletters.html">NEWSLETTERS</a>
+        </div>
+        <div class="nav-right">
+            <a href="#" id="adminNavBtn" class="btn-support">ADMIN</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Upload Newsletter</h1>
+            <p>Share the latest updates with our community through our quarterly newsletter.</p>
+        </section>
+
+        <section class="admin-form">
+            <form id="newsletterForm">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required placeholder="e.g., Spring 2024 Newsletter">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preview">Preview:</label>
+                    <textarea id="preview" rows="3" required placeholder="A brief summary of the newsletter content..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="coverFile">Cover Image (optional):</label>
+                    <div class="file-upload file-upload--image">
+                        <input type="file" id="coverFile" accept="image/*">
+                        <div class="file-upload-placeholder">
+                            <p>Choose a cover image for the newsletter (shown on homepage and newsletters page)</p>
+                            <p id="coverFileName" class="file-name">No cover image selected</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pdfFile">PDF File:</label>
+                    <div id="dropZone" class="file-upload">
+                        <input type="file" id="pdfFile" accept=".pdf" required>
+                        <div class="file-upload-placeholder">
+                            <p>Drag and drop a PDF file here or click to browse</p>
+                            <p id="fileName" class="file-name">No file selected</p>
+                            <p class="file-size">Maximum file size: 10MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Upload Newsletter</button>
+                    <a href="newsletters.html" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Texas A&M Medical Students for Choice</h2>
+            <p>Faculty Advisor: Dr. Rajesh Miranda</p>
+            <p>For inquiries, email <a href="mailto:tamu.msfc@gmail.com">tamu.msfc@gmail.com</a></p>
+            <p>Subscribe to our email list to follow what future doctors are doing to protect and expand abortion access at the Texas A&M College of Medicine!</p>
+            
+            <form id="subscriptionForm" class="subscription-form">
+                <input type="email" id="subscriberEmail" placeholder="Email Address" required>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+            <p id="subscriptionMessage" class="subscription-message"></p>
+
+            <div class="footer-links">
+                <a href="mailto:tamu.msfc@gmail.com">contact us</a>
+                <a href="index.html">home</a>
+                <a href="https://msfc.org/" target="_blank">national msfc</a>
+                <a href="https://www.instagram.com/tamu.msfc/" target="_blank">instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
