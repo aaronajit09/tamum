@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Admin password (loaded from environment variable)
-const ADMIN_PASSWORD = 'msfc2024';
+const ADMIN_PASSWORD = 'ADMIN_PASSWORD_PLACEHOLDER';
 
 // Supabase configuration - Replace with your new project URL and anon key (see SUPABASE_SETUP.md)
-const supabaseUrl = 'https://txkkrcpcwgwgehogwisx.supabase.co';
-const supabaseKey = 'sb_publishable_CfWcrYO5PbZ15FdyLOItww_hOY6HpIA';
+const supabaseUrl = 'SUPABASE_URL_PLACEHOLDER';
+const supabaseKey = 'SUPABASE_KEY_PLACEHOLDER';
 
 let supabase = null;
 if (window.supabase) {

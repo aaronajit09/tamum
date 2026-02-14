@@ -1,0 +1,11 @@
+{
+  "name": "msfc-website",
+  "version": "1.0.0",
+  "description": "MSFC Website",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npm run build && echo 'Site built for local development. Open index.html in browser.'"
+  },
+  "author": "",
+  "license": "ISC"
+}

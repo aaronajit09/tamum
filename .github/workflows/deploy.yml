@@ -26,9 +26,9 @@ jobs:
 
       - name: Replace secrets in script.js
         run: |
-          sed -i "s|https://txkkrcpcwgwgehogwisx.supabase.co|${{ secrets.SUPABASE_URL }}|g" script.js
-          sed -i "s|sb_publishable_CfWcrYO5PbZ15FdyLOItww_hOY6HpIA|${{ secrets.SUPABASE_ANON_KEY }}|g" script.js
-          sed -i "s|msfc2024|${{ secrets.ADMIN_PASSWORD }}|g" script.js
+          sed -i "s|SUPABASE_URL_PLACEHOLDER|${{ secrets.SUPABASE_URL }}|g" script.js
+          sed -i "s|SUPABASE_KEY_PLACEHOLDER|${{ secrets.SUPABASE_ANON_KEY }}|g" script.js
+          sed -i "s|ADMIN_PASSWORD_PLACEHOLDER|${{ secrets.ADMIN_PASSWORD }}|g" script.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
